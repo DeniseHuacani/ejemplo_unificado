@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="universidad.css">
+        <title>Universidades Licencidas</title>
+    </head>
+    <body>
+        <h1>Universidades Licenciadas</h1>
+        <div class ="form1">
+            <form  action="cgi-bin/universidad.cgi">
+                <label for="kind">Búsqueda  por:</label>
+                <select name="kind">
+                    <option value="nombre"> Nombre Universidad </option>
+                    <option value="periodo"> Periodo Licenciamiento </option>
+                    <option value="departamento"> Departamento Local </option>
+                    <option value="denominacion"> Denominación Programa </option>
+                </select>
+                <input type="text" name="keyword"><br>
+                <input type="submit" value="buscar">
+            </form>
+        </div>
+        
+    </body>
+</html>
