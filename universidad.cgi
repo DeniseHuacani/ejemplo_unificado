@@ -11,8 +11,23 @@ open(IN, 'C:/Program Files/xampp/htdocs/Programas_de_Universidades.csv') or die 
 my @datos = <IN>;
 close (IN);
 
+                    
 
 my $numCampos= cabeceras($datos[0]);
+print $numCampos;
+my $codigo = caracteres($numCampos);
+print $codigo;     
+
+sub caracteres{
+    my ($numero)=@_;
+    my $codigo = '/^';
+    for(my $i =0; $i<($numero-1); $i++){
+        $codigo .='([^\|]+)\|';
+    }
+    $codigo.='([^\|]+)';
+    return $codigo;
+}
+
 
 sub cabeceras{
     my $campos = $_[0];
