@@ -6,20 +6,25 @@
         <title>Universidades Licencidas</title>
     </head>
     <body>
-        <h1>Universidades Licenciadas</h1>
-        <div class ="form1">
-            <form  action="cgi-bin/universidad.cgi">
-                <label for="kind">Búsqueda  por:</label>
-                <select name="kind">
-                    <option value="nombre"> Nombre Universidad </option>
-                    <option value="periodo"> Periodo Licenciamiento </option>
-                    <option value="departamento"> Departamento Local </option>
-                    <option value="denominacion"> Denominación Programa </option>
-                </select>
-                <input type="text" name="keyword"><br>
-                <input type="submit" value="buscar">
-            </form>
-        </div>
-        
+        <center>
+            
+            <div class ="form1">
+                <h1>UNIVERSIDADES <br> LICENCIADAS</h1>
+                <form method="post" action="cgi-bin/universidad.cgi">
+                    <label for="kind">Búsqueda  por:</label><br>
+                    <select name="kind">
+                        <option value="nombre"> Nombre Universidad </option>
+                        <option value="periodo"> Periodo Licenciamiento </option>
+                        <option value="departamento"> Departamento Local </option>
+                        <option value="denominacion"> Denominación Programa </option>
+                    </select>
+                    <input type="text" name="keyword"><br>
+                    <input type="submit" value="Buscar">
+                </form>
+            </div>
+        </center>
     </body>
 </html>
+
+
+

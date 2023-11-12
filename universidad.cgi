@@ -8,12 +8,15 @@ print "Content-type: text/html\n\n";
 print <<HTML;
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="universidad.css">
-        <title>Universidades Licencidas</title>
-    </head>
-    <body>
+<head>
+    
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../universidad.css">
+    
+    <title>Universidades Licencidas</title>
+</head>
+<body>
+
 HTML
 
 my $q = new CGI;
@@ -35,6 +38,7 @@ for(my $i =0; $i<$long; $i++){
             if($2 eq $keyword){
                 $ciudad{$2}=0;
             }
+            
         } elsif ($kind eq "periodo") {
             if($5 eq $keyword){
                 $ciudad{$2}=0;
@@ -53,9 +57,20 @@ for(my $i =0; $i<$long; $i++){
     }
 }
 my @claves = (keys %ciudad);
-foreach my $city (@claves){
-    print "<h1>Encontrado: $city</h1>\n";
+my $cantidad =@claves;
+if($cantidad == 0){
+    print "<h2>No encontrado</h2>\n";
 }
+else{
+    
+    print "<h2>Encontrado: </h2>\n";
+    foreach my $city (@claves){
+
+        print "<h3>* $city</h3>\n";
+    }
+}
+
+
 
 sub patron{
     my ($numero)=@_;
